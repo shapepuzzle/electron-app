@@ -17,9 +17,19 @@
     "url": "git+https://github.com/shapepuzzle/electron-app.git"
   },
   "license": "ISC",
-  "author": "Emerson Estrella",
+  "author": {
+    "name": "Emerson Estrella",
+    "email": "shapepuzzle@shapepuzzle.github.io",
+    "url": "https://shapepuzzle.github.io"
+  },
   "type": "commonjs",
   "main": "main.js",
+  "build": {
+    "appId": "com.shapepuzzle.game",
+    "mac": {
+      "category": "public.app-category.games"
+    }
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "electron-forge start",
@@ -36,7 +46,8 @@
     "@electron-forge/plugin-auto-unpack-natives": "^7.10.2",
     "@electron-forge/plugin-fuses": "^7.10.2",
     "@electron/fuses": "^1.8.0",
-    "electron": "^39.1.2"
+    "electron": "^39.1.2",
+    "electron-builder": "^26.0.12"
   },
   "dependencies": {
     "electron-squirrel-startup": "^1.0.1"

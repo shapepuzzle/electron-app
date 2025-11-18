@@ -16,6 +16,8 @@ module.exports = {
     {
       name: '@electron-forge/maker-squirrel',
       config: {
+        // certificateFile: './cert.pfx',
+        // certificatePassword: process.env.CERTIFICATE_PASSWORD
         iconUrl: './build/icons/icon.ico',
         setupIcon: './build/icons/icon.ico',
         authors: 'Emerson Estrella',
@@ -24,7 +26,7 @@ module.exports = {
     },
     {
       name: '@electron-forge/maker-zip',
-      platforms: ['darwin'],
+      platforms: ['darwin', 'linux'],
     },
     {
       name: '@electron-forge/maker-deb',
@@ -50,6 +52,15 @@ module.exports = {
       name: '@electron-forge/maker-rpm',
       config: {},
     },
+    {
+      name: '@electron-forge/maker-deb',
+      config: {
+        options: {
+          maintainer: 'Emerson Estrella',
+          homepage: 'https://shapepuzzle.github.io'
+        }
+      }
+    }
   ],
   plugins: [
     {
