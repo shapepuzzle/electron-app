@@ -1,6 +1,7 @@
 {
   "name": "shapepuzzle",
-  "version": "1.0.0",
+  "productName": "Shape Puzzle - Animal Adventure",
+  "version": "0.0.9",
   "description": "Shape Puzzle - Animal Adventure - Help animals come back together one piece at a time",
   "keywords": [
     "Game",
@@ -34,13 +35,15 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "electron-forge start",
     "package": "electron-forge package",
-    "make": "electron-forge make"
+    "make": "electron-forge make",
+    "build": "docker build -t shapepuzzle-builder . && docker run -it -v ./out:/project/dist shapepuzzle-builder npx electron-builder --windows --linux deb tar.xz"
   },
   "devDependencies": {
     "@electron-forge/cli": "^7.10.2",
     "@electron-forge/maker-deb": "^7.10.2",
     "@electron-forge/maker-dmg": "^7.10.2",
     "@electron-forge/maker-rpm": "^7.10.2",
+    "@electron-forge/maker-snap": "^7.10.2",
     "@electron-forge/maker-squirrel": "^7.10.2",
     "@electron-forge/maker-zip": "^7.10.2",
     "@electron-forge/plugin-auto-unpack-natives": "^7.10.2",

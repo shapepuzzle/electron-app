@@ -1,10 +1,7 @@
 # electron-app
 
-To build the binaries use:
+To build the MacOs (DMG) binary from a Mac machine:
 ```npm run make```
 
-To build windows and linux binaries use Docker:
-```
-docker build -t linux-builder .
-docker run -it -v ./out:/project/dist linux-builder npx electron-builder -wl
-```
+To build windows and linux binaries from Docker:
+```npm run build```

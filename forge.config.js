@@ -20,8 +20,8 @@ module.exports = {
         // certificatePassword: process.env.CERTIFICATE_PASSWORD
         iconUrl: './build/icons/icon.ico',
         setupIcon: './build/icons/icon.ico',
-        authors: 'Emerson Estrella',
-        description: 'Shape Puzzle - Animal Adventure - Help animals come back together one piece at a time'
+        // authors: 'Emerson Estrella',
+        // description: 'Shape Puzzle - Animal Adventure - Help animals come back together one piece at a time'
       }
     },
     {
@@ -32,7 +32,9 @@ module.exports = {
       name: '@electron-forge/maker-deb',
       config: {
         options: {
-          icon: './build/icons/icon.png'
+          icon: './build/icons/icon.png',
+          maintainer: 'Emerson Estrella',
+          homepage: 'https://shapepuzzle.github.io'
         }
       }
     },
@@ -50,15 +52,19 @@ module.exports = {
     },
     {
       name: '@electron-forge/maker-rpm',
-      config: {},
-    },
-    {
-      name: '@electron-forge/maker-deb',
       config: {
         options: {
-          maintainer: 'Emerson Estrella',
           homepage: 'https://shapepuzzle.github.io'
         }
+      },
+    },
+    {
+      name: '@electron-forge/maker-snap',
+      config: {
+        features: {
+          audio: true,
+        },
+        summary: 'Shape Puzzle - Animal Adventure - Help animals come back together one piece at a time'
       }
     }
   ],
